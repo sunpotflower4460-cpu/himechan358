@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="借金や返済について、ひとりで抱えずに相談できる選択肢を紹介するページです。">
+<title>返済に悩んだときに知ってほしい選択肢</title>
+<style>
+  :root {
+    --bg: #fbf6ef;
+    --paper: #fffdf9;
+    --ink: #38261f;
+    --muted: #7b6961;
+    --pink: #dc6872;
+    --pink-dark: #cf5663;
+    --line: #ead7c8;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: var(--bg); }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 15% 4%, rgba(235, 192, 181, .18), transparent 24rem),
+      var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+      "Yu Gothic", "Noto Sans JP", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .lp {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 0 40px rgba(91, 57, 42, .05);
+    overflow: hidden;
+  }
+
+  .visual {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    background: var(--paper);
+  }
+
+  .visual img.section-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Real clickable hotspot over the CTA that is already drawn into section 1. */
+  .hero-hotspot {
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    top: 78.0%;
+    height: 9.2%;
+    border-radius: 999px;
+    z-index: 5;
+  }
+
+  /* Real clickable hotspot over the CTA that is already drawn into section 4. */
+  .reassurance-hotspot {
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    top: 69.2%;
+    height: 9.0%;
+    border-radius: 999px;
+    z-index: 5;
+  }
+
+  .hotspot:focus-visible {
+    outline: 4px solid rgba(220,104,114,.55);
+    outline-offset: -4px;
+  }
+
+  .offer {
+    padding: clamp(52px, 10vw, 88px) 22px clamp(42px, 9vw, 72px);
+    text-align: center;
+    background:
+      linear-gradient(180deg, rgba(255,253,249,.95), #fffaf4);
+    border-top: 1px solid rgba(234,215,200,.55);
+  }
+
+  .offer-inner {
+    width: min(100%, 560px);
+    margin: 0 auto;
+  }
+
+  .offer h2 {
+    margin: 0;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: clamp(29px, 7vw, 43px);
+    line-height: 1.45;
+    font-weight: 600;
+    letter-spacing: .02em;
+  }
+
+  .offer h2 em {
+    color: var(--pink-dark);
+    font-style: normal;
+  }
+
+  .offer-copy {
+    margin: 18px auto 34px;
+    max-width: 460px;
+    color: #5f4d45;
+    font-size: clamp(15px, 3.6vw, 18px);
+    line-height: 1.9;
+  }
+
+  .official-label {
+    display: inline-block;
+    margin-bottom: 13px;
+    color: #9a7668;
+    font-size: 12px;
+    letter-spacing: .12em;
+  }
+
+  .official-banner {
+    width: 300px;
+    max-width: 100%;
+    margin: 0 auto 26px;
+    line-height: 0;
+  }
+
+  .official-banner a {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .official-banner img.banner {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 14px 34px rgba(73, 48, 37, .11);
+  }
+
+  .affiliate-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 480px);
+    min-height: 72px;
+    margin: 0 auto;
+    padding: 16px 66px 16px 28px;
+    position: relative;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    font-size: clamp(22px, 5.4vw, 30px);
+    letter-spacing: .02em;
+    background: linear-gradient(180deg, #e67980, #d85763);
+    box-shadow:
+      0 10px 24px rgba(197, 76, 87, .20),
+      inset 0 1px 0 rgba(255,255,255,.55);
+    transition: transform .14s ease, box-shadow .14s ease;
+  }
+
+  .affiliate-cta::after {
+    content: "›";
+    position: absolute;
+    right: 17px;
+    top: 50%;
+    width: 46px;
+    height: 46px;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #d85c67;
+    font-family: sans-serif;
+    font-size: 37px;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(79, 40, 35, .10);
+  }
+
+  .affiliate-cta:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 15px rgba(197, 76, 87, .17);
+  }
+
+  .offer-note {
+    margin: 18px auto 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  footer {
+    padding: 20px 22px 30px;
+    text-align: center;
+    background: #fffaf4;
+    color: #8d7a71;
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .tracking-pixel {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  @media (max-width: 430px) {
+    .lp { box-shadow: none; }
+    .offer { padding-left: 18px; padding-right: 18px; }
+    .official-banner img.banner { border-radius: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .affiliate-cta { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main class="lp">
+
+  <section class="visual" aria-label="返しているのに終わりが見えない悩み">
+    <picture>
+      <source srcset="assets/01_hero.webp" type="image/webp">
+      <img class="section-image" src="assets/01_hero.png"
+           alt="返しているのに終わりが見えない。毎月返済しているのに生活費が足りず、またカードに頼ってしまう女性。"
+           fetchpriority="high">
+    </picture>
+    <a class="hotspot hero-hotspot"
+       href="//af.moshimo.com/af/c/click?a_id=5770567&p_id=7558&pc_id=21850&pl_id=94725"
+       rel="nofollow"
+       referrerpolicy="no-referrer-when-downgrade"
+       attributionsrc
+       aria-label="無料で相談してみる"></a>
+    <img class="tracking-pixel" src="//i.moshimo.com/af/i/impression?a_id=5770567&p_id=7558&pc_id=21850&pl_id=94725" width="1" height="1" alt="">
+  </section>
+
+  <section class="visual" aria-label="借金の悩みを誰にも言えない気持ち">
+    <picture>
+      <source srcset="assets/02_empathy.webp" type="image/webp">
+      <img class="section-image" src="assets/02_empathy.png"
+           alt="責められるのが怖い。誰にも言えない。でも苦しい。給料日、返済、誰かに話せない気持ちを描いた場面。"
+           loading="lazy">
+    </picture>
+  </section>
+
+  <section class="visual" aria-label="ひめちゃんがこの情報を紹介する理由">
+    <picture>
+      <source srcset="assets/03_hime.webp" type="image/webp">
+      <img class="section-image" src="assets/03_hime.png"
+           alt="私も借金をきっかけにお金と本気で向き合いました。あの頃知っておきたかった選択肢を届けたいというメッセージ。"
+           loading="lazy">
+    </picture>
+  </section>
+
+  <section class="visual" aria-label="何から話せばいいか分からなくても相談できる">
+    <picture>
+      <source srcset="assets/04_reassurance.webp" type="image/webp">
+      <img class="section-image" src="assets/04_reassurance.png"
+           alt="何から話せばいい？まとまっていなくても相談できます。整理できていない、誰にも言えていない、すぐに決められない場合の安心材料。"
+           loading="lazy">
+    </picture>
+    <a class="hotspot reassurance-hotspot"
+       href="//af.moshimo.com/af/c/click?a_id=5770567&p_id=7558&pc_id=21850&pl_id=94725"
+       rel="nofollow"
+       referrerpolicy="no-referrer-when-downgrade"
+       attributionsrc
+       aria-label="無料で相談してみる"></a>
+    <img class="tracking-pixel" src="//i.moshimo.com/af/i/impression?a_id=5770567&p_id=7558&pc_id=21850&pl_id=94725" width="1" height="1" alt="" loading="lazy">
+  </section>
+
+  <section class="offer" id="offer" aria-labelledby="offer-title">
+    <div class="offer-inner">
+      <h2 id="offer-title">無料相談について、<br><em>詳しく見る。</em></h2>
+      <p class="offer-copy">
+        借金や返済について無料で相談できる窓口の情報を確認できます。
+      </p>
+
+      <div class="official-banner">
+        <a href="//af.moshimo.com/af/c/click?a_id=5770567&p_id=7558&pc_id=21850&pl_id=94871"
+           rel="nofollow"
+           referrerpolicy="no-referrer-when-downgrade"
+           attributionsrc
+           aria-label="借金問題解決ナビの公式広告を見る">
+          <img class="banner"
+               src="//image.moshimo.com/af-img/7297/000000094871.jpg"
+               width="300"
+               height="250"
+               alt="借金問題解決ナビ 公式広告"
+               loading="lazy">
+        </a>
+        <img class="tracking-pixel"
+             src="//i.moshimo.com/af/i/impression?a_id=5770567&p_id=7558&pc_id=21850&pl_id=94871"
+             width="1" height="1" alt="" loading="lazy">
+      </div>
+
+      <a class="affiliate-cta"
+         href="//af.moshimo.com/af/c/click?a_id=5770567&p_id=7558&pc_id=21850&pl_id=94725"
+         rel="nofollow"
+         referrerpolicy="no-referrer-when-downgrade"
+         attributionsrc>無料で相談してみる</a>
+      <img class="tracking-pixel"
+           src="//i.moshimo.com/af/i/impression?a_id=5770567&p_id=7558&pc_id=21850&pl_id=94725"
+           width="1" height="1" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <footer>
+    PR｜サービス内容・条件はリンク先をご確認ください。
+  </footer>
+
+</main>
+</body>
+</html>
